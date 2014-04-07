@@ -1,0 +1,1 @@
+This is a reddit clone, built during the second course in Tealeaf Academy's Ruby on Rails program. 
