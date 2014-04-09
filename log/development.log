@@ -864,3 +864,123 @@ Migrating to CreatePostCategories (20140409195519)
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (76.4ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 09 Apr 2014 20:09:38 UTC +00:00], ["name", "Rubyists"], ["updated_at", Wed, 09 Apr 2014 20:09:38 UTC +00:00]]
   [1m[35m (2.1ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-09 14:25:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (66.1ms)
+Completed 500 Internal Server Error in 199ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h3>All Posts!</h3>
+    2: 
+    3: <ul>
+    4: 	<% @posts.each do |post| %>
+    5: 		<li><%= link_to post.title, post_path(post) %></li>
+    6: 	<% end %>
+    7: 
+  app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3819402250940622252_70344276199000'
+
+
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-09 14:26:43 -0700
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h3>All Posts!</h3>
+    2: 
+    3: <!-- <ul>
+    4: 	<% @posts.each do |post| %>
+    5: 		<li><%= link_to post.title, post_path(post) %></li>
+    6: 	<% end %>
+    7: 
+  app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3819402250940622252_70344276837400'
+
+
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-09 14:26:46 -0700
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h3>All Posts!</h3>
+    2: 
+    3: <!-- <ul>
+    4: 	<% @posts.each do |post| %>
+    5: 		<li><%= link_to post.title, post_path(post) %></li>
+    6: 	<% end %>
+    7: 
+  app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3819402250940622252_70344276837400'
+
+
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/jessicairgens/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-09 14:27:00 -0700
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 4479ms (Views: 4478.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-09 14:45:18 -0700
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-04-09 14:47:01 -0700
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-04-09 14:59:04 -0700
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 109ms (Views: 108.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-04-09 15:04:53 -0700
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-04-09 15:13:15 -0700
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (298.0ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 534ms (Views: 312.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-04-09 15:13:46 -0700
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
