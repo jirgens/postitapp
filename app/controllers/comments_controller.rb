@@ -10,4 +10,8 @@ class CommentsController < ApplicationController
 			render 'posts/show'
 		end
 	end
+
+	def show
+		@comment = Comment.new
+	end
 end
