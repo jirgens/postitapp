@@ -1,0 +1,20 @@
+
+	<div class='row'>
+		<div class='span8 well'>
+			<%= render post.categories%>
+			<h4><%= link_to post.title, fix_url(post.url) %></h4>
+			<p><%= post.description %> </p>
+			<p class='pull-right'>
+				[<%= link_to 'edit this post', edit_post_path(@post)%>]
+			</p>
+			<p>
+				<span class='quiet'>posted by</span> 
+				<small>at <% post.created_at %></small>
+			</p>	
+			<small>
+				<span>
+					<%= link_to("#{post.comments.size} comments", post_path(post)) %>
+				</span>
+			</small>		
+		</div>	<!-- end span8 well -->
+	</div>  <!-- end row div	 -->	
