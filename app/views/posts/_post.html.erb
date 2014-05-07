@@ -8,7 +8,7 @@
 				[<%= link_to 'edit this post', edit_post_path(post)%>]
 			</p>
 			<p>
-				<span class='quiet'>posted by</span> 
+				<span class='quiet'>posted by</span><%= link_to post.creator.username, user_path(post.creator) %>
 				<small>at <%= display_datetime(post.created_at) %></small>
 			</p>	
 			<small>
