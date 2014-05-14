@@ -11,14 +11,14 @@ class CategoriesController < ApplicationController
 
 	def new
 		@category = Category.new
-		require_user(:new, 'create a category')
+		# require_user(:new, 'create a category')
 	end
 
 	def create
 		@category = Category.new(category_params)
 
 		if @category.save
-			flash[:notice] = 'Your category was saved.'
+			flash[:notice] = 'You added a category.'
 			redirect_to category_path(@category)
 		else
 			render :new
@@ -42,9 +42,10 @@ class CategoriesController < ApplicationController
 	private
 
 		def category_params
-			params.require(:category).permit!
+			params.require(:category).permit(:name)
 		end
 
 		def set_category
 			@category = Category.find(params[:id])
 		end
+	end
