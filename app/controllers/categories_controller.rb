@@ -1,13 +1,15 @@
 class CategoriesController < ApplicationController
 
-	before_action :set_category, only: [:show, :edit, :update]
+	# before_action :set_category, only: [:show, :edit, :update]
 	before_action :require_user, only: [:new, :create]
 
-	def index
-		@categories = Category.all
-	end
+	# def index
+	# 	@categories = Category.all
+	# end
 
-	def show; end
+	def show
+		@category = Category.find_by slug: params[:id]
+	end
 
 	def new
 		@category = Category.new
@@ -25,19 +27,19 @@ class CategoriesController < ApplicationController
 		end
 	end
 
-	def edit
-		require_user(:edit, 'edit this category')
-	end
+	# def edit
+	# 	require_user(:edit, 'edit this category')
+	# end
 
-	def update
+	# def update
 
-		if @category.update(category_params)
-			flash[:notice] = 'Your category was updated'
-			redirect_to category_path(@category)
-		else
-			render :edit
-		end
-	end
+	# 	if @category.update(category_params)
+	# 		flash[:notice] = 'Your category was updated'
+	# 		redirect_to category_path(@category)
+	# 	else
+	# 		render :edit
+	# 	end
+	#end
 
 	private
 
@@ -45,7 +47,7 @@ class CategoriesController < ApplicationController
 			params.require(:category).permit(:name)
 		end
 
-		def set_category
-			@category = Category.find(params[:id])
-		end
+		# def set_category
+		# 	@category = Category.find_by slug: params[:id]
+		# end
 	end

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id] = @user.id
-			flash[:notice] = "Welcome new member!"
+			flash[:notice] = "Thanks for registering!"
 			redirect_to root_path
 		else
 			render :new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-
+	
 	end
 
 	def edit
@@ -42,12 +42,12 @@ class UsersController < ApplicationController
 	end
 
 	def set_user
-		@user = User.find(params[:id])
+		@user = User.find_by slug: params[:id]
 	end
 
 	def require_same_user
 		if current_user != @user
-			flash[:error] = "You can't do that!"
+			flash[:notice] = "You can't do that!"
 			redirect_to root_path
 		end
 	end

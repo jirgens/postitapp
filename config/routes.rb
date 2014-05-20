@@ -5,6 +5,7 @@ PostitTemplate::Application.routes.draw do
   get '/login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  # get 'users/:username', to: 'users#show'
   
   resources :posts, except: [:destroy] do
     member do      #pertains to individual memebers under the post block.
@@ -17,6 +18,7 @@ PostitTemplate::Application.routes.draw do
     end
 	end
 	resources :categories, only: [:new, :create, :show]
+
 	resources :users, only: [:show, :create, :edit, :update]
 
 end

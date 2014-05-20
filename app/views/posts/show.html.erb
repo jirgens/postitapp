@@ -7,12 +7,16 @@
 
 <p>
 	<%= render @post.categories %>
-</p>
+</p> 
 
 <%= render 'shared/content_title', title: @post.title %>
 
 <p>
 <%= @post.description %>
+</p>
+<p>
+	<span class='quiet'>posted by </span> <%= link_to @post.creator.username, user_path(@post.creator) %>
+	<small>at <%= display_datetime(@post.created_at) %></small>
 </p>
 <hr/>			
 
@@ -29,6 +33,6 @@
 
 <h5>Comments:</h5>
 
-<% @post.comments.each do |comment| %>
+<% @post.reload.comments.each do |comment| %>
 	<%= render 'comments/comment', comment: comment %>
 <% end %>		
