@@ -10,7 +10,6 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @category = Category.new
   end
 
   def new
