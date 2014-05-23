@@ -10,10 +10,10 @@
 				<%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
 					<i class='icon-arrow-down'></i>
 				<% end %>	
-			</div>
+			</div>   <!-- span0 well text-center -->
 		<% end %>	
 		<div class='span8 well'>
-			<%= render post.categories%>
+			<%= render post.categories %>
 			<h4><%= link_to post.title, fix_url(post.url) %></h4>
 			<p><%= post.description %> </p>
 			<p class='pull-right'>
