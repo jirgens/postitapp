@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.sort_by{|x| x.total_votes}.reverse
+    @posts = Post.order("title").page(params[:page])
   end
 
   def show

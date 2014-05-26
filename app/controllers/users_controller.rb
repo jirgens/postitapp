@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@post = Post.find_by slug: params[:id]
 	end
 
 	def edit
