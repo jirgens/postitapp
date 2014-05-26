@@ -1,6 +1,6 @@
 <%= render 'shared/content_title', title: 'All Posts' %>
 
-<%=paginate @posts, :left => 1, :right => 3 %>
+<%= paginate @posts %>
 
 <% @posts.each do |post| %>
 	<%= render 'post', post: post %>

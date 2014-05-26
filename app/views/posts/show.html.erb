@@ -1,4 +1,3 @@
-
 <% if logged_in? %>
 	<p class='pull-right'>
 		[<%= link_to 'edit this post', edit_post_path(@post)%>]
@@ -12,13 +11,9 @@
 <%= render 'shared/content_title', title: @post.title %>
 
 <p>
-<%= @post.description %>
+	<%= @post.reload.description %>
 </p>
-<p class='pull-right'>
-	<!-- <a href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook">Share on Facebook!</a> -->
-	<div class="fb-like" data-href="#{request.original_url}#{request.fullpath}" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
-
-</p>	
+<%= facebook_like %>
 <p>
 	<span class='quiet'>posted by </span> <%= link_to @post.creator.username, user_path(@post.creator) %>
 	<small>at <%= display_datetime(@post.created_at) %></small>
@@ -42,11 +37,3 @@
 	<%= render 'comments/comment', comment: comment %>
 <% end %>		
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>

@@ -13,4 +13,6 @@ class Post < ActiveRecord::Base
 
 	sluggable_column :title
 
+	paginates_per 5
+
 end
