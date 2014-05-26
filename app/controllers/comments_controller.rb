@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :require_user
+	before_action :set_post, only: [:show]
 
 	def create
 		@post = Post.find_by slug: params[:post_id]
@@ -14,7 +15,6 @@ class CommentsController < ApplicationController
 	end
 
 	def show
-		# @comment = Comment.new
 	end
 
 	def vote
@@ -31,5 +31,10 @@ class CommentsController < ApplicationController
 	    end
 	    format.js 
 	  end
+  end
+
+  private
+  def set_post
+    @post = Post.find_by slug: params[:id]
   end
 end
